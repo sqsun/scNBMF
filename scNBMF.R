@@ -1,5 +1,6 @@
 ###############################################
-####Code for the paper A fast and efficient count-based matrix factorization method for detecting cell types from single-cell RNAseq data
+#### Code for scNBMF
+#### Paper: A fast and efficient count-based matrix factorization method for detecting cell types from single-cell RNAseq data
 ###############################################
 
 
@@ -13,18 +14,18 @@ np <- import("numpy")
 
 Datapreprocess <- function(data,obs_col,var_col,val_col,offset_col,verbose,row ,col ) {
 #################################
-    #Proprocess for raw input data
+    # Proprocess for raw input data
     #
-    #Notes:
-    #It will get the total count of each genes for training and transform the data into 4 columns 
+    # Notes:
+    # It will get the total count of each genes for training and transform the data into 4 columns 
     #
-    #Variables:
-    #data: The input raw data  (shape: genes x cell)
-    #obs_col: The index of the column in result data which contains the cell index of the raw data
-    #obs_col: The index of the column in result data which contains the gene index of the raw data
-    #obs_col: The index of the column in result data which contains the count expression of the raw data
-    #obs_col: The index of the column in result data which contains the total count of the raw data
-    #verbose: Whether the dimensional information need to be output or not
+    # Variables:
+    # data: The input raw data  (shape: genes x cell)
+    # obs_col: The index of the column in result data which contains the cell index of the raw data
+    # obs_col: The index of the column in result data which contains the gene index of the raw data
+    # obs_col: The index of the column in result data which contains the count expression of the raw data
+    # obs_col: The index of the column in result data which contains the total count of the raw data
+    # verbose: Whether the dimensional information need to be output or not
 #################################
     if (verbose) {
         cat("Datapreprocess...\n");
@@ -207,7 +208,7 @@ scNBMF <- function(input_file, calcluster = FALSE, tagsname = '', batch_size = 1
          storename = "./H_result.csv", result_file = "./cluster_result.txt", lambda_for_l1 = 0.3, 
          tsneshow = TRUE, title = '', verbose = TRUE) {
 #############################
-    #Main parametrization of the ZINBMF algorithm.
+    #Main parametrization of the scNBMF algorithm.
 
     #Notes: If you need cluster after calculate the dimensional reduction matrix you need to add --calcluster True --tagsname name_of_the_label.txt 
     
