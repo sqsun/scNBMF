@@ -364,11 +364,11 @@ def scNBMF_model(G, C, k, variable_idx, sample_idx, T_, y_, psi, penalty_type, l
     
     G: Number of genes
     C: Number of cells
-    variable_idx: Gene index in the raw data matrix
-    sample_idx: Cell index in the raw data matrix
-    T_: Total count in the raw data matrix
-    y_: Count expression in the raw data matrix
-    psi: EdgeR dispersion of the input count data
+    variable_idx: Gene index
+    sample_idx: Cell index
+    T_: Total counts or read depth
+    y_: Count expression matrix
+    psi: Dispersion parameters computed by edgeR
     penalty_type: 1 means l1_penalty and others means l2_penalty
     lambda_for_l1: The coeffcient of l1 or l2_penalty
 
